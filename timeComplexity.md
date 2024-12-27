@@ -54,6 +54,9 @@ for(int i = 0; i < n; i++){        // Outer loop
 }
 ```
 ## O(log n) - Logarithmic Time  
+O(log n) refers to the time complexity of an algorithm that grows logarithmically with the size of the input. It means that as the input size (n) increases, the number of operations required grows at a much slower rate compared to linear time complexity (O(n)) or quadratic time complexity (O(n²)).
+
+In simple terms, an algorithm with O(log n) complexity means that each step or operation reduces the problem size by a constant factor (typically halving the size), so the number of steps required to solve the problem increases slowly as the input size grows.
 ### Understanding Logarithm:
 A logarithm is just a way to figure out how many times you need to multiply a number (called the base) by itself to reach another number.
 ### Simple Example:
@@ -83,6 +86,47 @@ for(int i = 1 i<=n; i = i * 2){
     cout<<"print"<<endl;
 }
 ```
+## O(n log n) - Linearithmic Time
+This time complexity is a mix of linear time (O(n)) and logarithmic time (O(log n)). It happens when the algorithm needs to divide the problem into smaller parts (logarithmic steps) and then process each part in a linear way.
+
+It’s commonly seen in efficient sorting algorithms, like Merge Sort or Quick Sort.
+
+### When to Expect O(n log n):
+1. Sorting large datasets efficiently, like with Merge Sort or Quick Sort.
+
+2. Solving problems using divide-and-conquer methods where both dividing and processing are required.
 
 
 
+# Space Complexity
+Space complexity refers to the amount of memory an algorithm uses as a function of the size of the input. It tells you how much extra space (or memory) the algorithm needs to run, aside from the space needed for the input data itself.
+
+Just like time complexity measures how long an algorithm takes, space complexity measures how much space (memory) an algorithm uses as it processes the data.
+
+## Auxiliary Space Complexity:
+This refers to the extra memory used by an algorithm during its execution, excluding the memory used to store the input data. It accounts for temporary storage like variables, data structures, or space required by recursive calls. Essentially, it focuses only on the additional memory needed to complete the task, not the input data.
+
+##  Total Space Complexity:
+Total space complexity is the total memory used by an algorithm, including both the input data and the extra memory it uses during execution. This means it considers:
+
+1. Memory used to store the input.
+
+2. Any additional memory needed for the algorithm's execution (like temporary variables, arrays, or recursion stacks).
+```c++
+int sumArray(int arr[], int n) {
+    int sum = 0;  // Extra space used for `sum`
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];  // The array elements are accessed here
+    }
+    return sum;
+}
+```
+### Auxiliary Space Complexity:
+
+O(1) because the algorithm only uses one additional variable, sum, regardless of the size of the input array. The space required for sum does not change with input size, so it remains constant.
+
+Note: The space used by the input array arr[] is not counted in auxiliary space because it is part of the input.
+
+### Total Space Complexity:
+
+O(n) because the algorithm requires memory for the input array arr[], which has n elements. The size of the input array directly influences the total space, making it linear in terms of n. The additional memory for sum is constant and doesn't change the overall space complexity.
