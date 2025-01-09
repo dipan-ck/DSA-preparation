@@ -1,0 +1,8 @@
+# Ignore prob.cpp file
+prob.cpp
+
+# Ignore prob.exe file
+prob.exe
+
+# Ignore .vscode directory
+.vscode/
